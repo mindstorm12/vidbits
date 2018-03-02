@@ -1,0 +1,16 @@
+<h1>Edit this post</h1>
+<form id="editPost" action="/updates" method="post">
+
+       <input type="text" id="title-input" name="title" value="{{newVideo.title}}">
+       {{#if newVideo.errors.title }}
+       {{#with newVideo.errors.title as |error|}}<span class="error">{{error.message}}</span>{{/with}}
+       {{/if}}
+        <textarea type="text" id="description-input" name="description" >{{newVideo.description}}</textarea>
+        {{#if newVideo.errors.description }}
+       {{#with newVideo.errors.description as |error|}}<span class="error">{{error.message}}</span>{{/with}}{{/if}}
+        <input type="text" id="videoUrl-input" name="videoUrl" value="{{newVideo.videoUrl}}">{{#if newVideo.errors.videoUrl }}
+       {{#with newVideo.errors.videoUrl as |error|}}<span class="error">{{error.message}}</span>{{/with}}{{/if}}
+       <input type="hidden" value="{{newVideo._id}}" name="Videoid">
+        <button type="submit"><p>Update Video</p></button>
+    </form>
+    

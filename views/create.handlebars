@@ -1,0 +1,29 @@
+<form action="/videos" method="post">
+       
+<!--       Test this later-->
+
+       <input type="text" id="title-input" name="title" value="{{newVideo.title}}">
+       {{#if newVideo.errors.title }}
+       {{#with newVideo.errors.title as |error|}}<span class="error">{{error.message}}</span>{{/with}}
+       {{/if}}
+        <textarea type="text" id="description-input" name="description" >{{newVideo.description}}</textarea>
+        {{#if newVideo.errors.description }}
+       {{#with newVideo.errors.description as |error|}}<span class="error">{{error.message}}</span>{{/with}}{{/if}}
+        <input type="text" id="videoUrl-input" name="videoUrl" value="{{newVideo.videoUrl}}">{{#if newVideo.errors.videoUrl }}
+       {{#with newVideo.errors.videoUrl as |error|}}<span class="error">{{error.message}}</span>{{/with}}{{/if}}
+        <button type="submit"><p>Save a Video</p></button>
+    </form>
+    
+    
+<!--
+    DELETE BEFORE SUBMISSTION
+   <h1>Create</h1>
+<form action="/items/create" method="post">
+    <label for="">Title: </label><input name="title" type="text" id='title-input'>
+    {{#with newItem.errors.title as |error|}}<span class="error">{{error.message}}</span>{{/with}}
+    <label for="">Image URL: </label><input name="imageUrl" type="text" id='imageUrl-input' value = "{{newItem.imageUrl}}">
+    {{#with newItem.errors.imageUrl as |error|}}<span class="error">{{error.message}}</span>{{/with}}
+    <label for="">Description: </label><textarea name="description" type="text" id='description-input'>{{newItem.description}}</textarea>
+    {{#with newItem.errors.description as |error|}}<span class="error">{{error.message}}</span>{{/with}}
+    <button id="submit-button" type="submit">Submit</button>
+</form>-->
